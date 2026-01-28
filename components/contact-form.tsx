@@ -114,7 +114,7 @@ export function ContactForm() {
           <div className="space-y-2">
             <Label>Telefone</Label>
             <Input
-              placeholder="(00) 00000-0000"
+              placeholder="00000000000"
               value={pfData.telefone}
               onChange={(e) =>
                 setPfData({ ...pfData, telefone: formatPhone(e.target.value) })
@@ -130,14 +130,14 @@ export function ContactForm() {
                   className="flex gap-4"
                 >
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="ligacao" id="pj-ligacao" />
-                    <Label htmlFor="pj-ligacao" className="cursor-pointer text-foreground">
+                    <RadioGroupItem value="LIGACAO" id="LIGACAO" />
+                    <Label htmlFor="pf-LIGACAO" className="cursor-pointer text-foreground">
                       LIGACAO
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="WHATSAPP" id="pj-WHATSAPP" />
-                    <Label htmlFor="pj-WHATSAPP" className="cursor-pointer text-foreground">
+                    <RadioGroupItem value="WHATSAPP" id="pf-WHATSAPP" />
+                    <Label htmlFor="pf-WHATSAPP" className="cursor-pointer text-foreground">
                       WHATSAPP
                     </Label>
                   </div>
@@ -152,20 +152,20 @@ export function ContactForm() {
                   className="flex flex-wrap gap-4"
                 >
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="manha" id="pj-manha" />
-                    <Label htmlFor="pj-manha" className="cursor-pointer text-foreground">
+                    <RadioGroupItem value="manha" id="pf-manha" />
+                    <Label htmlFor="pf-manha" className="cursor-pointer text-foreground">
                       Manhã
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="tarde" id="pj-tarde" />
-                    <Label htmlFor="pj-tarde" className="cursor-pointer text-foreground">
+                    <RadioGroupItem value="tarde" id="pf-tarde" />
+                    <Label htmlFor="pf-tarde" className="cursor-pointer text-foreground">
                       Tarde
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="Ambos" id="pj-imediato" />
-                    <Label htmlFor="pj-imediato" className="cursor-pointer text-foreground">
+                    <RadioGroupItem value="Ambos" id="pf-Ambos" />
+                    <Label htmlFor="pf-Ambos" className="cursor-pointer text-foreground">
                       Ambos
                     </Label>
                   </div>
@@ -173,11 +173,11 @@ export function ContactForm() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="pj-comentarios" className="text-foreground">
+                <Label htmlFor="pf-comentarios" className="text-foreground">
                   Comentários
                 </Label>
                 <Textarea
-                  id="pj-comentarios"
+                  id="pf-comentarios"
                   placeholder="Deixe sua mensagem ou observações..."
                   value={pfData.comentarios}
                   onChange={(e) => setPfData({ ...pfData, comentarios: e.target.value })}
