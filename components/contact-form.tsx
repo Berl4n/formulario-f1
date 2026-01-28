@@ -132,13 +132,13 @@ export function ContactForm() {
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="ligacao" id="pj-ligacao" />
                     <Label htmlFor="pj-ligacao" className="cursor-pointer text-foreground">
-                      Ligação
+                      LIGACAO
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="whatsapp" id="pj-whatsapp" />
-                    <Label htmlFor="pj-whatsapp" className="cursor-pointer text-foreground">
-                      WhatsApp
+                    <RadioGroupItem value="WHATSAPP" id="pj-WHATSAPP" />
+                    <Label htmlFor="pj-WHATSAPP" className="cursor-pointer text-foreground">
+                      WHATSAPP
                     </Label>
                   </div>
                 </RadioGroup>
