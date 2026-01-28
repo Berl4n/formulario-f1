@@ -148,9 +148,9 @@ export function ContactForm() {
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="imediato" id="pj-imediato" />
+                    <RadioGroupItem value="Ambos" id="pj-imediato" />
                     <Label htmlFor="pj-imediato" className="cursor-pointer text-foreground">
-                      Imediato
+                      Ambos
                     </Label>
                   </div>
                 </RadioGroup>
