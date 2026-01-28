@@ -15,6 +15,7 @@ export function ContactForm() {
 
   const [pfData, setPfData] = useState({
     nome: "",
+    email: "",
     telefone: "",
     formaContato: "ligacao",
     horario: "manha",
@@ -94,6 +95,20 @@ export function ContactForm() {
               required
             />
           </div>
+          <div className="space-y-2">
+            <Label htmlFor="pj-email" className="text-foreground">
+              E-mail
+            </Label>
+            <Input
+              id="pj-email"
+              type="email"
+              placeholder="empresa@email.com"
+              value={pfData.email}
+              onChange={(e) => setPfData({ ...pfData, email: e.target.value })}
+              className="bg-card"
+              required
+            />
+          </div>
 
           {/* Telefone */}
           <div className="space-y-2">
@@ -106,6 +121,7 @@ export function ContactForm() {
               }
               required
             />
+          </div>
           <div className="space-y-3">
                 <Label className="text-foreground">Forma de Contato</Label>
                 <RadioGroup
@@ -168,8 +184,6 @@ export function ContactForm() {
                   className="bg-card min-h-24 resize-none"
                 />
               </div>
-            </div>
-        
 
           <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Button
