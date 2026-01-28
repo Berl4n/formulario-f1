@@ -32,7 +32,7 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      await fetch("https://boxdesk.app.n8n.cloud/webhook-test/contato/f1", {
+      await fetch("https://boxdesk.app.n8n.cloud/webhook/contato/f1", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
