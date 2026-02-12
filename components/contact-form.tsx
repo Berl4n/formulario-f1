@@ -47,39 +47,69 @@ export function ContactForm() {
       await new Promise((resolve) => setTimeout(resolve, 1500))
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 3000)
-    } catch (error) {
-      console.error("Erro ao enviar cadastro:", error)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
+      setPfData({
+        nome: "",
+        email: "",
+        telefone: "",
+        formaContato: "ligacao",
+        horario: "manha",
+        comentarios: "",
+      })
+  } catch (error) {
+    console.error("Erro ao enviar cadastro:", error)
+  } finally {
+    setIsSubmitting(false)
+    setSubmitted(true)
 
-  if (submitted) {
+    //limpar o formulário após o envio
+    setPfData({
+      nome: "",
+      email: "",
+      telefone: "",
+      formaContato: "ligacao",
+      horario: "manha",
+      comentarios: "",
+    })
+    setTimeout(() => setSubmitted(false), 3000)
+  }
+}
+
+if (submitted) {
     return (
       <Card className="w-full max-w-2xl mx-auto shadow-lg border-0">
         <CardContent className="flex flex-col items-center justify-center py-16">
           <img
-            src="/images/logo-netway-fibra-1536x391.png"
-            alt="Netway Fibra"
+            src="/images/logo-boxdesk.png"
+            alt="Boxdesk"
             className="h-20 w-auto object-contain mb-6"
           />
-          <h3 className="text-xl font-semibold mb-2">Cadastro Enviado!</h3>
+          <h3 className="text-xl font-semibold mb-2">Solicitação Enviada!</h3>
           <p className="text-muted-foreground text-center">
             Nossa equipe entrará em contato em breve.
           </p>
         </CardContent>
       </Card>
     )
-  }
+  } 
 
   return (
     <Card className="w-full max-w-2xl mx-auto shadow-lg border-0">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold">Solicitação de Contato</CardTitle>
-        <CardDescription>
-          Preencha os dados para entrarmos em contato com você
-        </CardDescription>
+      <CardHeader className="space-y-1 pb-6">
+        <div className="flex items-start justify-between">
+          <div>
+            <CardTitle className="text-2xl font-bold text-foreground">Solicitação de Contato</CardTitle>
+            <CardDescription className="text-muted-foreground">
+              Preencha os dados para entrarmos em contato com você
+            </CardDescription>
+          </div>
+          <img
+            src="/images/logo-boxdesk.png"
+            alt="Boxdesk"
+            className="h-12 w-auto object-contain"
+          />
+        </div>
       </CardHeader>
+
 
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -94,11 +124,11 @@ export function ContactForm() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="pj-email" className="text-foreground">
+            <Label htmlFor="pf-email" className="text-foreground">
               E-mail
             </Label>
             <Input
-              id="pj-email"
+              id="pf-email"
               type="email"
               placeholder="empresa@email.com"
               value={pfData.email}
@@ -195,7 +225,7 @@ export function ContactForm() {
               type="button"
               variant="outline"
               className="flex-1 h-12 text-base font-medium border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:shadow-md bg-transparent"
-              onClick={() => window.open("https://1550.3cx.cloud/boxdesk/", "_blank")}
+              onClick={() => window.open("https://api.whatsapp.com/send?1=pt_BR&phone=5581995588779", "_blank")}
             >
               <svg
                 className="w-5 h-5 mr-2"

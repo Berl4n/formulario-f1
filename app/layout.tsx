@@ -10,15 +10,15 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Cadastro de Contato",
   description: "Formulário de cadastro para Pessoa Física e Pessoa Jurídica",
-  generator: "v0.app",
+  generator: "boxdesk",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/boxdesk-icon-light-32x32.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/boxdesk-icon-dark-32x32.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/boxdesklogo-apple-icon.png",
   },
 }
 
